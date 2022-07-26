@@ -100,8 +100,7 @@ class LinkedList:
             temp = self._head.next
             self._head = Node(val)
             self._head.next = temp
-        self.rec_insert(self._head, val, pos)
-
+        return self.rec_insert(self._head, val, pos)
 
     def rec_insert(self,node, val, pos):
 
