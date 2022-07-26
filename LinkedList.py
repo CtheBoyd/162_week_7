@@ -144,7 +144,7 @@ class LinkedList:
         """
         if self._head is None:  # If the list is empty
             return False
-        self.rec_contains(key, self._head)
+        return self.rec_contains(key, self._head)
 
     def rec_contains(self, val, node):
         """
