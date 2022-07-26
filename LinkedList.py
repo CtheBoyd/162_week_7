@@ -20,8 +20,8 @@ class LinkedList:
     def __init__(self):
         self._head = None
 
-    #def get_head(self):
-    #    return self._head
+    def get_head(self):
+        return self._head
 
     def add(self, val):
         """
