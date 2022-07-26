@@ -127,16 +127,14 @@ class LinkedList:
 
     def rec_reverse(self, current, previous):
 
-        if current is not None:
+        if current is None:
             self._head = previous
             return
-
         following = current.next
         current.next = previous
         previous = current
         current = following
         self.rec_reverse(current, previous)
-        self._head = previous
         return
 
     def contains(self, key):
