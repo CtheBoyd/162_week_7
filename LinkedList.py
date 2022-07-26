@@ -1,7 +1,7 @@
 # Author: Christopher Boyd
 # GitHub username: CtheBoyd
 # Date: 7/26/2022
-# Description: Returns lemonade stand sales and profits
+# Description: linked list assignment changing iterative functions to recursive.
 #
 
 
@@ -20,8 +20,8 @@ class LinkedList:
     def __init__(self):
         self._head = None
 
-    def get_head(self):
-        return self._head
+    #def get_head(self):
+    #    return self._head
 
     def add(self, val):
         """
@@ -33,6 +33,7 @@ class LinkedList:
         self.rec_add(self._head, val)
 
     def rec_add(self, node, val):
+        """ Adds a node containing val to the linked list"""
 
         if node.next is None:
             node.next = Node(val)
@@ -53,6 +54,7 @@ class LinkedList:
         self.rec_remove(self._head, val)
 
     def rec_remove(self, node, val):
+        """Removes the node containing val from the linked list"""
 
         if node.next is None:
             return
@@ -61,8 +63,6 @@ class LinkedList:
             node.next = node.next.next
             return
         self.rec_remove(node.next, val)
-
-
 
     def is_empty(self):
         """
@@ -82,6 +82,7 @@ class LinkedList:
 
 
     def rec_to_plain_list(self, node, result):
+        """Returns a regular Python list containing the same values, in the same order, as the linked list"""
         if node is None:
             return result
 
@@ -92,6 +93,7 @@ class LinkedList:
         return result
 
     def insert(self, val, pos):
+        """insert method takes as parameters a value and a position (in that order)."""
 
         if self._head is None:
            self.add(val)
@@ -104,6 +106,7 @@ class LinkedList:
         self.rec_insert(self._head, val, pos)
 
     def rec_insert(self,node, val, pos):
+        """insert method takes as parameters a value and a position (in that order)."""
 
         if node.next is None:
             node.next =Node(val)
@@ -118,15 +121,13 @@ class LinkedList:
         return
 
     def reverse(self):
-        """"
-        Reverses the linked list
-        """
+        """Reverses the linked list"""
         current = self._head
         previous = None
         self.rec_reverse(current, previous)
 
     def rec_reverse(self, current, previous):
-
+        """Reverses the linked list"""
         if current is None:
             self._head = previous
             return
