@@ -92,7 +92,8 @@ class LinkedList:
         return result
 
     def insert(self, val, pos):
-        if self.head is None:
+
+        if self._head is None:
            self.add(val)
            return
 
@@ -100,7 +101,7 @@ class LinkedList:
             temp = self._head.next
             self._head = Node(val)
             self._head.next = temp
-        return self.rec_insert(self._head, val, pos)
+        self.rec_insert(self._head, val, pos)
 
     def rec_insert(self,node, val, pos):
 
