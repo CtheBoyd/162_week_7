@@ -170,14 +170,3 @@ class LinkedList:
         self.rec_display(self._head)
 
 
-def main():
-    my_list = LinkedList()
-    my_list.add(13)
-    my_list.add(9)
-    my_list.add(81)
-    my_list.display()
-#     my_list.reverse()
-    my_list.remove(9)
-    my_list.display()
-if __name__ == '__main__':
-    main()
